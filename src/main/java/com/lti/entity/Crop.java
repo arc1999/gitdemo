@@ -1,24 +1,18 @@
 package com.lti.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TBL_BID")
-
-public class Bid {
-
+@Table(name = "TBL_CROP")
+public class Crop {
+	@Id
 	private int id;
-	private double amount;
 
 	@ManyToOne
-	@JoinColumn(name = "bidder_id")
+	@JoinColumn(name = "farmer_id")
 	private User user;
-	@OneToMany
-	@JoinColumn(name = "bidder_id")
-	private Crop crop;
-
 }
