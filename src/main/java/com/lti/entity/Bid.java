@@ -1,6 +1,7 @@
 package com.lti.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -10,7 +11,7 @@ import javax.persistence.Table;
 @Table(name = "TBL_BID")
 
 public class Bid {
-
+	@Id
 	private int id;
 	private double amount;
 
@@ -18,7 +19,7 @@ public class Bid {
 	@JoinColumn(name = "bidder_id")
 	private User user;
 	@OneToMany
-	@JoinColumn(name = "bidder_id")
+	@JoinColumn(name = "crop_id")
 	private Crop crop;
 
 }
