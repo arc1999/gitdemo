@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Table(name = "TBL_BID")
 
 public class Bid {
+	
 	@Id
 	private int id;
 	private double amount;
@@ -18,6 +19,7 @@ public class Bid {
 	@ManyToOne
 	@JoinColumn(name = "bidder_id")
 	private User user;
+	
 	@OneToMany
 	@JoinColumn(name = "crop_id")
 	private Crop crop;
